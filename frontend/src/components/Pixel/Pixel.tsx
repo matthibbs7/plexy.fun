@@ -6,6 +6,7 @@ import { ClientToServerEvents, ServerToClientEvents } from '../../util/types';
 import { cloneDeep } from 'lodash'
 
 interface PixelProps {
+    mouseHeld: boolean,
     colorSelected: string,
     defaultBg: string,
     socket: Socket<ServerToClientEvents, ClientToServerEvents>,
@@ -13,7 +14,7 @@ interface PixelProps {
     room: string,
 };
 
-const Pixel:React.FC<PixelProps> = ({ grid, colorSelected, defaultBg, socket, index, room }) => {
+const Pixel:React.FC<PixelProps> = ({ mouseHeld, grid, colorSelected, defaultBg, socket, index, room }) => {
     const [pixelColor, setPixelColor] = useState('white');
 
     useEffect(() => {
@@ -45,7 +46,7 @@ const Pixel:React.FC<PixelProps> = ({ grid, colorSelected, defaultBg, socket, in
     }
 
     return (
-        <Box onClick={() => updatePixelColor()} height="20px" width="20px" bg={pixelColor}>
+        <Box onMouseOver={() => mouseHeld ? updatePixelColor() : false} onClick={() => updatePixelColor()} height="20px" width="20px" bg={pixelColor}>
 
         </Box>
     )

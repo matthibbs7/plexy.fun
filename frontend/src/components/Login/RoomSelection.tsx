@@ -17,7 +17,7 @@ const RoomSelection:React.FC<RoomSelectionProps> = ({ roomSelected, setRoomSelec
     const onSubmit = (event: React.FormEvent) => {
         event.preventDefault();
 
-        if (!roomSelected) {
+        if (!roomSelected.selection) {
             return
         }
         setRoomSelected({selection: roomSelected.selection, submitted: true})
