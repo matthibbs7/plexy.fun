@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
 import { Logo } from "./Logo"
-import Login from "./components/Login/Login"
+import Login from "./components/Login/SignUp"
 import RoomSelection from "./components/Login/RoomSelection"
 import Home from "./pages/Home"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
